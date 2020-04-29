@@ -25,13 +25,13 @@ pipeline {
       }
     }
     
-    stage ('Test image') { // test image 
+   /* stage ('Test image') { // test image 
       agent{
         docker {image'image_api'}
       }
       steps {
       sh 'python /student_age.py'}
-    }
+    }*/
     stage ( 'push image' ) { //push image
       steps {
         script 
