@@ -1,7 +1,7 @@
 pipeline {
   
   environment {
-    registry = "docker_hub_account/repository_name"
+    registry = "306655/image_api_repo"
     registryCredential = 'dockerhub'
   }
   agent any
@@ -17,22 +17,28 @@ pipeline {
       }
     }
     
-    stage('Building image') {
+    stage('Building image') { //building image
       steps{
         script {
-          docker.build("image_api","./simple_api/")
+          docker.build("306655/image_api_repo","./simple_api/")
        }
       }
     }
     
-    stage ('Test image') {
+    stage ('Test image') { // test image 
       agent{
         docker {image'image_api'}
       }
       steps {
       sh 'python /student_age.py'}
     }
-    
+    stage ( 'push image' ) { //push image
+      steps {
+        script 
+        docker.withRegistry('','registryCredential') {
+        dockerImage.push() }
+      }
+    }
     
 }
 }
