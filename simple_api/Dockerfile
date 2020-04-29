@@ -12,8 +12,7 @@ COPY student_age.json /data
 RUN apt-get update -y && apt-get install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
 RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 
-#creating a file to be mounted
-WORKDIR /data
+
 
 #mouting the created file
 VOLUME /data
