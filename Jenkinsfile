@@ -25,13 +25,14 @@ pipeline {
       }
     }
     
-   /* stage ('Test image') { // test image 
+    stage ('Test image') { // test image 
       agent{
-        docker {image'image_api'}
+        docker {image'306655/image_api_repo'}
       }
       steps {
-      sh 'python /student_age.py'}
-    }*/
+      sh "curl -u toto:python -X GET http://localhot:5000/pozos/api/v1.0/get_student_ages"}
+    }
+    
     stage ( 'push image' ) { //push image
       steps {
         script {
