@@ -35,7 +35,7 @@ pipeline {
     stage ( 'push image' ) { //push image
       steps {
         script {
-        docker.withRegistry('','registryCredential') {
+        docker.withRegistry('https://hub.docker.com/r/306655/image_api_repo','registryCredential') {
           dockerImage.push() }
         }
       }
