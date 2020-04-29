@@ -15,7 +15,7 @@ RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 
 
 #mouting the created file
-VOLUME /data
+#VOLUME /data
 
 #opening port 5000
 EXPOSE 5000
