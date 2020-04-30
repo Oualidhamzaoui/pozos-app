@@ -1,5 +1,3 @@
-# student-list 
-This repo is a simple application to list student with a webserver (PHP) and API (Flask)
 DevOps est un ensemble de pratiques qui combine le développement de logiciels et les opérations de technologie de l'information qui vise à raccourcir le cycle de vie du développement des systèmes et à fournir une livraison continue avec une haute qualité logicielle.
 
 ## Simple CI/CD pipeline
